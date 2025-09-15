@@ -1,0 +1,24 @@
+[tool.ruff]
+# Keep this aligned with what you actually target.
+target-version = "py312"
+line-length = 100
+extend-exclude = ["dist", "build", ".venv"]
+
+[tool.ruff.lint]
+# Start small and add as you go. Common, unobtrusive rule sets:
+select = [
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "W",   # pycodestyle warnings
+  "I",   # isort (imports)
+  "B",   # flake8-bugbear
+  "UP",  # pyupgrade
+]
+# Typical ignore: allow unused imports in __init__.py for package exports
+per-file-ignores = { "__init__.py" = ["F401"] }
+
+[tool.ruff.format]
+# Enable Ruff formatter (alternative to Black)
+quote-style = "preserve"   # or "single"/"double"
+indent-style = "space"
+skip-magic-trailing-comma = false

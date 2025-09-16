@@ -5,5 +5,7 @@ tip_percent = int(input("What percentage tip will you leave: "))
 total_w_tip = round(total_bill * ((tip_percent / 100) + 1), 2)
 
 print(f"The total bill including tip is €{total_w_tip:.2f}")
-
-print(f"That is {total_w_tip / no_people:.2f} per person.")
+if no_people <= 0:
+    print(f"You can't split a bill between {no_people}")
+else:
+    print(f"That is {total_w_tip / no_people:.2f} per person.")
